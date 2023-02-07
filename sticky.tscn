@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/stick-arm.png" type="Texture" id=1]
+[ext_resource path="res://assets/stick-leg.png" type="Texture" id=2]
+[ext_resource path="res://assets/stick-head.png" type="Texture" id=3]
+[ext_resource path="res://assets/stick-body.png" type="Texture" id=4]
+[ext_resource path="res://assets/stick-handle.png" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Head" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="Chest" type="Sprite" parent="Head"]
+position = Vector2( 0, 34 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, 16 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Abdomen" type="Sprite" parent="Head/Chest"]
+position = Vector2( 0, 32 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, 18 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="UpperLeg" type="Sprite" parent="Head/Chest/Abdomen"]
+position = Vector2( 30, 55 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 36 )
+
+[node name="LowerLeg" type="Sprite" parent="Head/Chest/Abdomen/UpperLeg"]
+position = Vector2( 0, 74 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 36 )
+
+[node name="Stick-handle" type="Sprite" parent="Head/Chest/Abdomen/UpperLeg/LowerLeg"]
+position = Vector2( 0, 72 )
+texture = ExtResource( 5 )
+
+[node name="Stick-handle" type="Sprite" parent="Head/Chest/Abdomen"]
+position = Vector2( 0, 36 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="UpperArm" type="Sprite" parent="Head/Chest"]
+position = Vector2( -49, 35 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 20 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="LowerArm" type="Sprite" parent="Head/Chest/UpperArm"]
+position = Vector2( 0, 42 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 20 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Stick-handle" type="Sprite" parent="Head/Chest/UpperArm/LowerArm"]
+position = Vector2( 0, 48 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_bone_": true
+}
